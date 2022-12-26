@@ -1,0 +1,18 @@
+import React, { Component } from 'react';
+import css from './FeedbackButton.module.css';
+
+export default class FeedbackButton extends Component {
+  render() {
+    return (
+      <button
+        name={this.props.children}
+        onClick={() => this.props.onAdd(this.props.children.toLowerCase())}
+        className={`${
+          css.feedbackBtn + ' ' + css[this.props.children.toLowerCase()]
+        }`}
+      >
+        {this.props.children}
+      </button>
+    );
+  }
+}

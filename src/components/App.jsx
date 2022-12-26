@@ -1,3 +1,5 @@
+import FeedbackApp from './FeedbackTask/FeedbackApp/FeedbackApp';
+
 export const App = () => {
-  return <div>hello</div>;
+  return <FeedbackApp />;
 };
