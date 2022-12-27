@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './Notification.module.css';
 import { ImInfo } from 'react-icons/im';
 
@@ -12,3 +13,7 @@ export default class Notification extends Component {
     );
   }
 }
+
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};

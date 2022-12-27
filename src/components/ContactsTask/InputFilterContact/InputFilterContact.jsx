@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ContactsAppCaption from '../ContactsAppCaption/ContactsAppCaption';
 import css from './InputFilterContact.module.css';
 
@@ -18,3 +19,8 @@ export default class InputFilterContact extends Component {
     );
   }
 }
+
+InputFilterContact.propTypes = {
+  handleFilterContact: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+};

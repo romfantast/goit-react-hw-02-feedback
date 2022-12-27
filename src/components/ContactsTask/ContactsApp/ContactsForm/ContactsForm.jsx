@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Button from 'components/ContactsTask/Button/Button';
 import ContactsAppCaption from 'components/ContactsTask/ContactsAppCaption/ContactsAppCaption';
 import InputAddContact from 'components/ContactsTask/InputAddContact/InputAddContact';
@@ -18,3 +19,8 @@ export default class ContactsForm extends Component {
     );
   }
 }
+
+ContactsForm.propTypes = {
+  handleSubmitForm: PropTypes.func.isRequired,
+  handleContactData: PropTypes.func.isRequired,
+};

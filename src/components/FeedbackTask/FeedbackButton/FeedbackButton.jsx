@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './FeedbackButton.module.css';
 
 export default class FeedbackButton extends Component {
@@ -16,3 +17,8 @@ export default class FeedbackButton extends Component {
     );
   }
 }
+
+FeedbackButton.propTypes = {
+  children: PropTypes.string.isRequired,
+  onAdd: PropTypes.func.isRequired,
+};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 import {
   ImSmile,
@@ -39,3 +40,13 @@ export default class Statistics extends Component {
     );
   }
 }
+
+Statistics.propTypes = {
+  onTotal: PropTypes.number.isRequired,
+  onPositive: PropTypes.func.isRequired,
+  options: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+};

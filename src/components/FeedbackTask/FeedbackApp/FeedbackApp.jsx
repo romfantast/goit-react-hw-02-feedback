@@ -29,7 +29,7 @@ export default class FeedbackApp extends Component {
     const totalCount = this.countTotalFeedback();
     return (
       <div className={css.feedback}>
-        <FeedbackCaption />
+        <FeedbackCaption>How you satisfied with our service?</FeedbackCaption>
         <FeedbackOptions
           btns={Object.keys(this.state)}
           onAdd={this.handleAddFeedback}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { BiUserCircle } from 'react-icons/bi';
 import css from './ContactsList.module.css';
 import Button from 'components/ContactsTask/Button/Button';
@@ -38,3 +39,8 @@ export default class ContactsList extends Component {
     );
   }
 }
+
+ContactsList.propTypes = {
+  showFilteredContacts: PropTypes.func.isRequired,
+  handleDeleteContact: PropTypes.func.isRequired,
+};
