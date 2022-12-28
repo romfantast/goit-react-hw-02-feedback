@@ -25,11 +25,11 @@ export default class Statistics extends Component {
         </p>
         <p className={css.statsItem}>
           <ImSad className={css.bad} />
-          Bad:{bad}
+          Bad: {bad}
         </p>
         <p className={css.statsItem}>
           <ImCalculator />
-          Total : {total}
+          Total: {total}
         </p>
         <p className={css.statsItem}>
           {positivePercentage > 50 ? <ImArrowUp2 /> : <ImArrowDown2 />}

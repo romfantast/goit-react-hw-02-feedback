@@ -33,8 +33,8 @@ export default class App extends Component {
       <div className={css.feedback}>
         <Section title="How you satisfied with our service?">
           <FeedbackOptions
-            btns={Object.keys(this.state)}
-            onAdd={this.handleAddFeedback}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.handleAddFeedback}
           />
         </Section>
         <Section title={total ? 'Statistic' : ''}>

@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FeedbackButton from '../FeedbackButton/FeedbackButton';
+// import FeedbackButton from '../FeedbackButton/FeedbackButton';
 
 import css from './FeedbackOptions.module.css';
 import { capitalizeFirstLetter } from 'components/helpers/capitalizeFirstLetter';
 
 export default class FeedbackOptions extends Component {
-  btnsNames = this.props.btns.map(name => capitalizeFirstLetter(name));
+  btnsNames = this.props.options.map(name => capitalizeFirstLetter(name));
   render() {
-    const { onAdd } = this.props;
+    const { onLeaveFeedback } = this.props;
     return (
       <div className={css.btnsWrapper}>
         {this.btnsNames.map(btnName => (
-          <FeedbackButton key={btnName} onAdd={onAdd}>
-            {btnName}
-          </FeedbackButton>
+          <button
+            type="button"
+            key={btnName}
+            className={`${css.feedbackBtn + ' ' + css[btnName.toLowerCase()]}`}
+            onClick={() => onLeaveFeedback(btnName.toLowerCase())}
+          >
+            {capitalizeFirstLetter(btnName)}
+          </button>
         ))}
       </div>
     );
@@ -22,6 +27,6 @@ export default class FeedbackOptions extends Component {
 }
 
 FeedbackOptions.propTypes = {
-  btns: PropTypes.arrayOf(PropTypes.string),
-  onAdd: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
