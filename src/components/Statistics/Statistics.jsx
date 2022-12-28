@@ -12,8 +12,7 @@ import {
 
 export default class Statistics extends Component {
   render() {
-    const { onTotal, onPositive } = this.props;
-    const { good, neutral, bad } = this.props.options;
+    const { good, neutral, bad, total, positivePercentage } = this.props;
     return (
       <div className={css.statsWrapper}>
         <p className={css.statsItem}>
@@ -30,11 +29,11 @@ export default class Statistics extends Component {
         </p>
         <p className={css.statsItem}>
           <ImCalculator />
-          Total : {onTotal}
+          Total : {total}
         </p>
         <p className={css.statsItem}>
-          {onPositive() > 50 ? <ImArrowUp2 /> : <ImArrowDown2 />}
-          Positive: {onPositive() + '%'}
+          {positivePercentage > 50 ? <ImArrowUp2 /> : <ImArrowDown2 />}
+          Positive: {positivePercentage + '%'}
         </p>
       </div>
     );
@@ -42,11 +41,9 @@ export default class Statistics extends Component {
 }
 
 Statistics.propTypes = {
-  onTotal: PropTypes.number.isRequired,
-  onPositive: PropTypes.func.isRequired,
-  options: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  }),
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
 };
