@@ -1,9 +1,0 @@
-.notify {
-  text-align: center;
-}
-.notify p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 5px;
-}
